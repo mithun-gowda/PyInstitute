@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+        div{
+            display:inline-block;
+            border: 2px solid ;
+            width:35%;
+            height:350px;
+            padding-left: 60px;
+            /* margin: auto;
+            margin-top: 0px; */
+            background-color: rgb(50, 164, 205);
+        }
+        h4{
+            background-color: green;
+            color: darkgrey;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    {% for msg in messages %}
+    <h4>{{msg}}</h4>
+
+    {% endfor %}
+
+
+    {% for i in data %}
+    <div>
+        <h1>Batch id :- {{i.bid}} </h1>
+        <h1>Trainer :- {{i.Trainer}}</h1>
+        <h1>subject :- {{i.subject}}</h1>
+        <h1>Time :- {{i.Time}}</h1>
+        <h1>Room no :- {{i.room_no}}</h1>
+        <h1>Mode :- {{i.mode}}</h1>
+
+    </div>
+    {% endfor %}
+
+    <a href="{% url 'batchvw' %}"> Batch</a>
+</body>
+</html>

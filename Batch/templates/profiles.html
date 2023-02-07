@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        img{
+            width: 200px;
+            height: 300px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <table border="2" cellpadding="5px" cellspacing="0px">
+
+        <tr>
+            <th>Trainer ID</th>
+            <th>NAME</th>
+            <th>SALARY</th>
+            <th> WORK EXPERIANCE</th>
+            <th>DATE OF JOIN</th>
+            <th>PHOTO</th>
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{i.tid}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.salary}}</td>
+            <td>{{i.work_exp}}</td>
+            <td>{{i.Date_of_join}}</td>
+            <td><img src="{{i.photo.url}}" alt=""></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    
+</body>
+</html>
